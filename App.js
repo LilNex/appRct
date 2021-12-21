@@ -34,6 +34,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 
 
 export default class App extends React.Component {
@@ -44,7 +46,6 @@ export default class App extends React.Component {
 
 	render() {
 
-		const Tab = createBottomTabNavigator();
 
 		function HomeScreen() {
   
@@ -71,9 +72,9 @@ export default class App extends React.Component {
 		return (
 
 			<NavigationContainer>
-					{/* <Text>
+					<Text>
 						TEST CODE
-					</Text> */}
+					</Text>
 					<Tab.Navigator>
            				<Tab.Screen name="Home" component={HomeScreen} />
            				<Tab.Screen name="Settings" component={settingsScreen} />
