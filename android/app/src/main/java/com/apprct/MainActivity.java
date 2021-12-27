@@ -1,7 +1,10 @@
 package com.apprct;
 
 import com.facebook.react.ReactActivity;
-import Android.os.Bundle;
+import android.os.Bundle;
+// import com.facebook.react.bridge.JSIModulePackage; // <- add this
+// import com.swmansion.reanimated.ReanimatedJSIModulePackage; // <- add this
+// import Android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -13,9 +16,26 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "appRct";
   }
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-     super.onCreate(null);
+    super.onCreate(null);
   }
+//   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
+//       @Override
+//       protected String getJSMainModuleName() {
+//         return "index";
+//       }
+// // add more this "Override" below <----------------
+//       @Override 
+//       protected JSIModulePackage getJSIModulePackage() {
+//         return new ReanimatedJSIModulePackage(); // <- add
+//       }
+//     };
+
+  // @Override
+  // protected void onCreate(Bundle savedInstanceState) {
+  //    super.onCreate(null);
+  // }
+  
 }

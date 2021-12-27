@@ -1,184 +1,57 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-// import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-// import { TabNav } from './components/TabNav'
-// import {Test} from './components/Test'
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
+import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { View, Text } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-native-paper';
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+import { theme } from './src/core/theme';
+import {
+  StartScreen,
+  LoginScreen,
+  RegisterScreen,
+  ResetPasswordScreen,
+  Dashboard,
+} from './src/screens';
 
-
-
-export default class App extends React.Component {
-    // constructor(props) {
-    //   	super(props);
-    // }
-	
-
-	render() {
-
-
-		function HomeScreen() {
-  
-		return (
-			<View style={{ 
-				flex: 1,
-				alignItems: 'center',
-				justifyContent: 'center' 
-			  }}>
-			  <Text>Home Screen</Text>
-			</View>
-		);
-		}
-		 
-		  
-		function settingsScreen() {
-			return (
-			  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-				<Text>Settings!</Text>
-			  </View>
-			);
-		  }
-
-		return (
-
-			<NavigationContainer>
-					<Text>
-						TEST CODE
-					</Text>
-					<Tab.Navigator>
-           				<Tab.Screen name="Home" component={HomeScreen} />
-           				<Tab.Screen name="Settings" component={settingsScreen} />
-         			</Tab.Navigator>
-
-			</NavigationContainer>
-			
-
-			
-			
-		);
-	}
-
-
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
 }
 
-// const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-// const Section = ({children, title}): Node => {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.black : Colors.white,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Test />  
-        
-        
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// };
+function App() {
+    console.log('start app');
+  return (
+    <Provider theme={theme}>
+    <NavigationContainer>
+       <Stack.Navigator
+          initialRouteName="StartScreen"
+          screenOptions={{
+            headerShown: true,
+          }}
+        >
+          <Stack.Screen name="StartScreen" component={StartScreen} />
+          <Stack.Screen name="LoginScreen" component={LoginScreen} />
+          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen
+            name="ResetPasswordScreen"
+            component={ResetPasswordScreen}
+          />
+        </Stack.Navigator>
+    </NavigationContainer>
+    </Provider>
 
-// const App: () => Node = () => {
-//   const isDarkMode = useColorScheme() === 'dark';
+  );
+}
 
-//   const backgroundStyle = {
-//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-//   };
-
-//   return (
-//     <SafeAreaView style={backgroundStyle}>
-//       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         {/* <Header /> */}
-//         {/* <View
-//           style={{
-//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-//           }}>
-//           <Section title="Step One">
-//             Edit <Text style={styles.highlight}>ApSSSp.js</Text> to change this
-//             screen and then come back to see your edits.
-//           </Section>
-//           <Section title="See Your Changes">
-//             <ReloadInstructions />
-//           </Section>
-//           <Section title="Debug">
-//             <DebugInstructions />
-//           </Section>
-//           <Section title="Learn More">
-//             Read the docs to discover what to do next:
-//           </Section>
-//           <LearnMoreLinks />
-//         </View> */}
-//       </ScrollView>
-//       
-
-//     </SafeAreaView>
-
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
-
+export default App;
