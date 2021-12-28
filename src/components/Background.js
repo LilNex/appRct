@@ -1,3 +1,5 @@
+/* eslint-disable semi */
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'

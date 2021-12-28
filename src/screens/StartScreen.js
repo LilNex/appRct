@@ -1,12 +1,14 @@
+/* eslint-disable jsx-quotes */
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
-// import {Button as cButton} from '../components/Button';
-import {Button} from 'react-native';
+import Button from '../components/Button';
+// import { Button as rButton } from 'react-native';
 import Paragraph from '../components/Paragraph';
-// import Alert from 'react-native';
+import Alert from 'react-native';
 
 export default function StartScreen({ navigation }) {
   return (
@@ -16,18 +18,19 @@ export default function StartScreen({ navigation }) {
       <Paragraph>
         The easiest way to start with your amazing application.
       </Paragraph>
-      <Button
-        title = 'Login' onPress={()=>{
+      {/* <rButton title='testtt'/> */}
+      {/* <Button
+        title = 'Login' mode="contained" onPress={()=>{
           console.log('test')
         }}
-        ></Button>
-      {/* <Button
+        ></Button> */}
+      <Button
         mode="contained"
-        style={{
-          color:'red'
-        }}
+        // style={{
+        //   color:'red'
+        // }}
         onPress={() => {
-          Alert.alert('Simple Button pressed');
+          // Alert.alert('Simple Button pressed');
           navigation.navigate('LoginScreen');}
         }
       >
@@ -38,7 +41,7 @@ export default function StartScreen({ navigation }) {
         onPress={() => navigation.navigate('RegisterScreen')}
       >
         Sign Up
-      </Button> */}
+      </Button>
     </Background>
   )
 }

@@ -1,3 +1,5 @@
+/* eslint-disable semi */
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { Text } from 'react-native-paper'
@@ -21,7 +23,7 @@ export default function RegisterScreen({ navigation }) {
     const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
-    if (emailError || passwordError || nameError) {
+    if ( emailError || passwordError || nameError ) {
       setName({ ...name, error: nameError })
       setEmail({ ...email, error: emailError })
       setPassword({ ...password, error: passwordError })
@@ -37,7 +39,7 @@ export default function RegisterScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Create Account</Header>
+      <Header>Créer un compte</Header>
       <TextInput
         label="Name"
         returnKeyType="next"
