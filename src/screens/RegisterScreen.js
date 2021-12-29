@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react'
@@ -29,6 +30,21 @@ export default function RegisterScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
+    const response = fetch('http://restapi.adequateshop.com/api/authaccount/registration', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    });
+    navigation.navigate({
+      name:"Dashboard",
+      params:{rsp : response}
+    })
     navigation.reset({
       index: 0,
       routes: [{ name: 'Dashboard' }],
@@ -43,7 +59,7 @@ export default function RegisterScreen({ navigation }) {
       <TextInput
         label="Name"
         returnKeyType="next"
-        value={name.value}
+        value={name.value ?? 'testg'}
         onChangeText={(text) => setName({ value: text, error: '' })}
         error={!!name.error}
         errorText={name.error}

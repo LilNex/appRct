@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable semi */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-trailing-spaces */
@@ -26,7 +27,7 @@ export default function Dashboard({ navigation }) {
 				alignItems: 'center',
 				justifyContent: 'center' 
 			  }}>
-			  <Text>Home Screen</Text>
+			  <Text>{navigation}</Text>
 			</View>
 		);
 		}
