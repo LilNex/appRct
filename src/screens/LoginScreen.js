@@ -25,6 +25,24 @@ export default function LoginScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
+    var rsp;
+    var response = fetch('http://restapi.adequateshop.com/api/authaccount/login',{
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value
+      })
+    }).then((res) => res.json())
+    .then((json) => {
+      console.log('response : '+ JSON.stringify(json) );
+      rsp=json;
+    });
+    
+
     navigation.reset({
       index: 0,
       routes: [{ name: 'Dashboard' }],
@@ -39,7 +57,9 @@ export default function LoginScreen({ navigation }) {
       <TextInput
         label="Email"
         returnKeyType="next"
-        value={email.value}
+        value={()=>{
+
+        }}
         onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}

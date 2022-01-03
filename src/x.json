@@ -1,0 +1,37 @@
+{
+    "type": "default",
+    "status": 400,
+    "ok": false,
+    "statusText": "",
+    "headers": {
+        "map": {
+            "content-length": "106",
+            "server": "Microsoft-IIS/10.0",
+            "expires": "-1",
+            "x-aspnet-version": "4.0.30319",
+            "pragma": "no-cache",
+            "date": "Wed, 29 Dec 2021 22:49:55 GMT",
+            "x-powered-by": "ASP.NET",
+            "content-type": "application/json; charset=utf-8",
+            "cache-control": "no-cache"
+        }
+    },
+    "url": "http://restapi.adequateshop.com/api/authaccount/registration",
+    "bodyUsed": false,
+    "_bodyInit": {
+        "_data": {
+            "size": 106,
+            "offset": 0,
+            "blobId": "41f0a82d-df6d-4199-b466-1520c84e120c",
+            "__collector": {}
+        }
+    },
+    "_bodyBlob": {
+        "_data": {
+            "size": 106,
+            "offset": 0,
+            "blobId": "41f0a82d-df6d-4199-b466-1520c84e120c",
+            "__collector": {}
+        }
+    }
+}

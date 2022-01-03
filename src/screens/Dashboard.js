@@ -27,7 +27,7 @@ export default function Dashboard({ navigation }) {
 				alignItems: 'center',
 				justifyContent: 'center' 
 			  }}>
-			  <Text>{navigation}</Text>
+			  <Text>{this.props.route.params.response}</Text>
 			</View>
 		);
 		}
