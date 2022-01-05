@@ -20,11 +20,11 @@ export default function LoginScreen({ navigation }) {
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
-    if (emailError || passwordError) {
-      setEmail({ ...email, error: emailError })
-      setPassword({ ...password, error: passwordError })
-      return
-    }
+    // if (emailError || passwordError) {
+    //   setEmail({ ...email, error: emailError })
+    //   setPassword({ ...password, error: passwordError })
+    //   return
+    // }
     var rsp;
     var response = fetch('http://restapi.adequateshop.com/api/authaccount/login',{
       method: 'POST',
@@ -40,13 +40,24 @@ export default function LoginScreen({ navigation }) {
     .then((json) => {
       console.log('response : '+ JSON.stringify(json) );
       rsp=json;
+      
     });
     
+    // navigation.navigate("Root",{
+    //   screen:"Dashboard",
+    //   params:{
+    //     user:"Nex"
+    //   }
+    // })
 
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
+    navigation.navigate('Dashboard',{
+      user:email.value
+    });
+    // console.log("test logs expo");
+    // navigation.reset({
+    //   index: 0,
+    //   routes: [{ name: 'Dashboard' }],
+    // })
   }
 
   return (
