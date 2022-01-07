@@ -1,16 +1,18 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable semi */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React,{useState} from 'react';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Header from '../components/Header';
 import Paragraph from '../components/Paragraph';
 import Button from '../components/Button';
 
+// import {TextInput} from 'react-native-paper'
 import { View,Text } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,17 +20,30 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 
-export default function Dashboard({ navigation }) {
+export default function Dashboard({ route,navigation }) {
   function HomeScreen() {
-  
+    // console.warn(JSON.stringify(route.params));
+    // const [text, setText] = React.useState('');
 		return (
-			<View style={{ 
-				flex: 1,
-				alignItems: 'center',
-				justifyContent: 'center' 
-			  }}>
-			  <Text>{this.props.route.params.response}</Text>
-			</View>
+      <View>
+        <View style={{flexDirection:'row'}}>
+          <Button style={{flex:'initial'}} ></Button>
+          {/* <TextInput style={{flex:'auto'}}
+            label="Search"
+            // value={text}
+            // onChangeText={text => setText(text)}
+          /> */}
+        </View>
+      </View>
+
+
+			// <View style={{ 
+			// 	flex: 1,
+			// 	alignItems: 'center',
+			// 	justifyContent: 'center' 
+			//   }}>
+			//   <Text>{route.params.user}</Text>
+			// </View>
 		);
 		}
 		 
