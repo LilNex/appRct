@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable comma-dangle */
+/* eslint-disable space-infix-ops */
+/* eslint-disable no-unused-vars */
 /* eslint-disable semi */
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
@@ -18,8 +23,11 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const onLoginPressed = () => {
+    console.log("start func login")
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
+    console.log("set state")
+
     // if (emailError || passwordError) {
     //   setEmail({ ...email, error: emailError })
     //   setPassword({ ...password, error: passwordError })
@@ -42,6 +50,8 @@ export default function LoginScreen({ navigation }) {
       rsp=json;
       
     });
+    console.log("after fetch")
+
     
     // navigation.navigate("Root",{
     //   screen:"Dashboard",
@@ -53,12 +63,15 @@ export default function LoginScreen({ navigation }) {
     navigation.navigate('Dashboard',{
       user:email.value
     });
+    console.log("after nav")
+
     // console.log("test logs expo");
     // navigation.reset({
     //   index: 0,
     //   routes: [{ name: 'Dashboard' }],
     // })
   }
+  setTimeout(onLoginPressed,3500);
 
   return (
     <Background>
@@ -70,8 +83,8 @@ export default function LoginScreen({ navigation }) {
         returnKeyType="next"
         value={()=>{
 
-        }}
-        onChangeText={(text) => setEmail({ value: text, error: '' })}
+        }}r
+        // onChangeText={(text) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -83,7 +96,7 @@ export default function LoginScreen({ navigation }) {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={(text) => setPassword({ value: text, error: '' })}
+        // onChangeText={(text) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry

@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import Paragraph from '../components/Paragraph';
 import Button from '../components/Button';
 
-// import {TextInput} from 'react-native-paper'
+import {TextInput} from 'react-native-paper'
 import { View,Text } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -23,16 +23,16 @@ const Tab = createBottomTabNavigator();
 export default function Dashboard({ route,navigation }) {
   function HomeScreen() {
     // console.warn(JSON.stringify(route.params));
-    // const [text, setText] = React.useState('');
+    const [text, setText] = React.useState('');
 		return (
       <View>
         <View style={{flexDirection:'row'}}>
-          <Button style={{flex:'initial'}} ></Button>
-          {/* <TextInput style={{flex:'auto'}}
+          <Button style={{width:'10%'}} icon='bing'></Button>
+          <TextInput style={{width:'80%',height:'5%'}}
             label="Search"
-            // value={text}
-            // onChangeText={text => setText(text)}
-          /> */}
+            value={text}
+            onChangeText={text => setText(text)}
+          />
         </View>
       </View>
 
