@@ -10,6 +10,7 @@ import Button from './src/components/Button';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider } from 'react-native-paper';
+// import 'react-native-gesture-handlers';
 
 import { theme } from './src/core/theme';
 import {

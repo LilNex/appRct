@@ -121,7 +121,7 @@ export default function Dashboard({ route,navigation }) {
       />
     </View>
       </ScrollView>
-      </SafeAreaView>
+       </SafeAreaView>
     
       </View>
 		);
