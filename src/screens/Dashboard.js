@@ -53,6 +53,8 @@ export default function Dashboard({route, navigation}) {
       backgroundColor: 'pink',
       borderRadius: 24,
       margin: '3%',
+      width:'48%',
+      padding:8,
     },
   });
 
@@ -159,15 +161,13 @@ export default function Dashboard({route, navigation}) {
                 }}
               />
             </View>
-            <View>
-			<SafeAreaView>
-			<ScrollView>
+            <View style={{flex:2}}>
               <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
+                <Avatar.Text style={{width:64,height:64}} label="H" />
+                {/* <Card.Title
+                  title="Nouveaux prospects"
                   subtitle="Subtitle"
                   left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
                   )}
                   right={(props: any) => (
                     <IconButton
@@ -176,7 +176,7 @@ export default function Dashboard({route, navigation}) {
                       onPress={() => {}}
                     />
                   )}
-                />
+                /> */}
               </Card>
 			  <Card style={styles.card}>
                 <Card.Title
@@ -194,104 +194,7 @@ export default function Dashboard({route, navigation}) {
                   )}
                 />
               </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			  <Card style={styles.card}>
-                <Card.Title
-                  title="Test cards"
-                  subtitle="Subtitle"
-                  left={(props: any) => (
-                    <Avatar.Icon {...props} icon="folder" />
-                  )}
-                  right={(props: any) => (
-                    <IconButton
-                      {...props}
-                      icon="dots-vertical"
-                      onPress={() => {}}
-                    />
-                  )}
-                />
-              </Card>
-			</ScrollView>
-			</SafeAreaView>
+			  
             </View>
           </ScrollView>
         </SafeAreaView>
